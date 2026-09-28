@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=891b5b89-349b-461d-9c7d-db3f1f6f7ad8
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Geek On Sale · Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>/* SAME COLOR THEME - BLUE/GRAY */
+        :root {
+            --bb-blue: #0046be;
+            --bb-light-blue: #0056d6;
+            --bb-dark: #1d252c;
+            --bb-gray: #f4f6f9;
+            --bb-light-gray: #f7f7f7;
+            --bb-red: #FF5F15;
+            --bb-white: #fff;
+            --bb-border: #e0e0e0;
+            --bb-text: #2d2d2d;
+            --bb-text-light: #555;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: var(--bb-gray); }
+
+        .app { max-width: 1400px; margin: 0 auto; background: var(--bb-white); }
+
+        /* TOP STRIP */
+        .top-strip { background: var(--bb-blue); color: white; text-align: center; padding: 8px; font-size: 13px; letter-spacing: 0.5px; }
+
+        /* HEADER */
+        .header { padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--bb-border); flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 26px; font-weight: 900; color: var(--bb-blue); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { background: var(--bb-blue); color: white; padding: 4px 12px; border-radius: 30px; font-size: 13px; }
+        .search-box { flex: 1; max-width: 400px; display: flex; }
+        .search-box input { flex: 1; padding: 12px 18px; border: 2px solid var(--bb-border); border-radius: 50px; outline: none; background: var(--bb-light-gray); }
+        .search-box button { background: var(--bb-blue); border: none; padding: 0 20px; border-radius: 50px; color: white; margin-left: -50px; cursor: pointer; }
+        .header-icons { display: flex; gap: 25px; }
+        .header-icons a { color: var(--bb-text); text-decoration: none; display: flex; flex-direction: column; align-items: center; font-size: 11px; gap: 4px; }
+        .cart-badge { position: relative; }
+        .cart-count { background: var(--bb-red); border-radius: 50%; padding: 2px 6px; font-size: 10px; position: absolute; top: -8px; right: -12px; color: white; }
+
+        @media (max-width: 768px) {
+            .search-box { display: none !important; }
+        }
+
+        /* NAVIGATION */
+        .nav-bar { background: var(--bb-dark); padding: 8px 25px; overflow-x: auto; display: flex; gap: 6px; scrollbar-width: thin; }
+        .nav-bar a { background: transparent; color: white; padding: 8px 20px; border-radius: 40px; text-decoration: none; font-size: 13px; white-space: nowrap; cursor: pointer; }
+        .nav-bar a.deal { background: var(--bb-red); }
+        .nav-bar a:hover { background: var(--bb-blue); }
+
+        /* CONTACT PAGE MAIN */
+        .contact-container { padding: 40px 30px; max-width: 1200px; margin: 0 auto; }
+        .page-title { font-size: 36px; color: var(--bb-blue); margin-bottom: 10px; border-left: 5px solid var(--bb-blue); padding-left: 18px; }
+        .page-subtitle { color: var(--bb-text-light); margin-bottom: 40px; font-size: 16px; margin-left: 23px; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        
+        /* CONTACT FORM */
+        .contact-form-card { background: var(--bb-white); border: 1px solid var(--bb-border); border-radius: 28px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .contact-form-card h3 { font-size: 24px; margin-bottom: 20px; color: var(--bb-dark); }
+        .form-group { margin-bottom: 20px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 14px 18px; border: 2px solid var(--bb-border); border-radius: 16px; font-size: 15px; outline: none; transition: 0.2s; background: var(--bb-light-gray); }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--bb-blue); background: white; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .submit-btn { background: var(--bb-blue); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.2s; }
+        .submit-btn:hover { background: #0035a0; transform: translateY(-2px); }
+
+        /* INFO CARDS */
+        .info-section { display: flex; flex-direction: column; gap: 25px; }
+        .info-card { background: var(--bb-white); border: 1px solid var(--bb-border); border-radius: 28px; padding: 25px; display: flex; align-items: center; gap: 18px; transition: 0.2s; }
+        .info-card:hover { transform: translateX(5px); border-color: var(--bb-blue); }
+        .info-icon { width: 55px; height: 55px; background: var(--bb-blue); border-radius: 30px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; }
+        .info-text h4 { font-size: 18px; margin-bottom: 6px; color: var(--bb-dark); }
+        .info-text p, .info-text a { color: var(--bb-text-light); text-decoration: none; font-size: 15px; }
+        .info-text a:hover { color: var(--bb-blue); }
+
+        /* MAP CARD */
+        .map-card { background: var(--bb-white); border: 1px solid var(--bb-border); border-radius: 28px; overflow: hidden; margin-top: 25px; }
+        .map-card iframe { width: 100%; height: 250px; border: 0; }
+        .map-address { padding: 20px 25px; background: var(--bb-light-gray); }
+        .map-address p { color: var(--bb-text); font-weight: 500; }
+
+        /* SOCIAL LINKS */
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-link { width: 45px; height: 45px; background: var(--bb-gray); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bb-blue); font-size: 20px; transition: 0.2s; text-decoration: none; }
+        .social-link:hover { background: var(--bb-blue); color: white; transform: translateY(-3px); }
+
+        /* FLOATING CALL BUTTON */
+        .float-call { position: fixed; bottom: 20px; left: 20px; background: var(--bb-red); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        /* FOOTER */
+        .footer { background: var(--bb-dark); margin-top: 60px; padding: 40px 30px 20px; color: #ccc; }
+        .footer-grid { max-width: 1300px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: white; margin-bottom: 18px; border-left: 3px solid var(--bb-blue); padding-left: 12px; }
+        .footer-col a { color: #aaa; text-decoration: none; display: block; margin-bottom: 10px; font-size: 13px; }
+        .footer-bottom { text-align: center; padding-top: 30px; font-size: 12px; border-top: 1px solid #333; margin-top: 30px; }
+        .disclaimer { font-size: 11px; color: #888; text-align: center; margin-top: 15px; }
+
+        @media (max-width: 850px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-container { padding: 25px 20px; }
+            .page-title { font-size: 28px; }
+        }
+    </style>
+    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
+    <script id="zsiqscript" src="https://salesiq.zohopublic.in/widget?wc=siq40a29c253fc64841d5c9e202635df27f5e70b56baef6b909b049f5b3987a5836" defer></script>
+</head>
+<body>
+
+
+
+<div class="app">
+    <div class="top-strip">🚚 FREE SHIPPING ON ORDERS $50+ | 📞 24/7 SUPPORT</div>
+
+    <div class="header">
+        <a href="#" class="logo" onclick="window.location.href='index.html'">Geek <span>Offer</span></a>
+        <div class="search-box">
+            <input type="text" placeholder="Search products...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-icons">
+            <a href="#" onclick="window.location.href='index.html'"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="#"><i class="fas fa-th"></i><span>All</span></a>
+            <a href="#" class="cart-badge"><i class="fas fa-shopping-cart"></i><span>Cart</span><span class="cart-count" id="cartCount">0</span></a>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <a href="#" class="deal" onclick="window.location.href='index.html'">⚡ Today's Deals</a>
+        <a href="#">TV & Audio</a>
+        <a href="#">Laptops</a>
+        <a href="#">Phones</a>
+        <a href="#">Gaming</a>
+        <a href="#">Appliances</a>
+        <a href="#">Audio</a>
+    </div>
+
+    <!-- CONTACT PAGE CONTENT -->
+    <div class="contact-container">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">We're here to help — reach out anytime</p>
+
+        <div class="contact-grid">
+            <!-- LEFT: CONTACT FORM -->
+            <div class="contact-form-card">
+                <h3><i class="fas fa-envelope" style="margin-right: 10px; color: var(--bb-blue);"></i> Send us a message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                </form>
+            </div>
+
+            <!-- RIGHT: INFO CARDS -->
+            <div class="info-section">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info-text">
+                        <h4>Call Us</h4>
+                        <p><a href="tel:"></a></p>
+                        <p>Mon-Sat: 10am - 7pm</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:support@Geekdeal.com">support@Geekdeal.com</a></p>
+                        <p>Response within 24 hours</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="info-text">
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/18449982210"></a></p>
+                        <p>Chat with our team</p>
+                    </div>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <!-- Map Card -->
+                <div class="map-card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6134.7361831057815!2d-75.5574251!3d39.7538432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6fd114f68615d%3A0xbb2c96ff7ef5379e!2s1207%20Delaware%20Ave%20%233141%2C%20Wilmington%2C%20DE%2019806!5e0!3m2!1sen!2sus!4v1773932703442!5m2!1sen!2sus" loading="lazy"></iframe>
+                    <div class="map-address">
+                        <p><i class="fas fa-map-pin" style="color: var(--bb-blue);"></i> 1207 DELAWARE AVE 3141, WILMINGTON, DE 19806</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>Customer Support</h4><a href='contact.html'>Contact Us</a><a href='refund.html'>Returns Policy</a><a href="#">Shipping Info</a></div>
+            <div class="footer-col"><h4>Company</h4><a href='about.html'>About Storex</a><a href="#">Careers</a><a href="#">Store Locator</a></div>
+            <div class="footer-col"><h4>Legal</h4><a href='privacy.html'>Privacy Policy</a><a href='terms.html'>Terms of Service</a><a href='refund.html'>Refund Policy</a></div>
+        </div>
+        <div class="footer-bottom">© 2026 Geek On Sale LLC. All rights reserved.</div>
+        <div class="disclaimer"><i class="fas fa-exclamation-triangle"></i> Disclaimer: Geek On Sale is an independent electronics retailer. Not affiliated with any major brand. All trademarks belong to respective owners.</div>
+    </div>
+</div>
+
+<script>
+    // Cart count (same as home page)
+    let cart = JSON.parse(localStorage.getItem('storexCart')) || [];
+    function updateCartCount() { let total = cart.reduce((a,i)=>a+(i.qty||1),0); let countEl = document.getElementById('cartCount'); if(countEl) countEl.innerText = total; }
+    updateCartCount();
+
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+        
+        if(name && email && message) {
+            alert(`Thank you ${name}! We've received your message and will get back to you soon.`);
+            this.reset();
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+</script>
+</body>
+</html>
