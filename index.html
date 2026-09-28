@@ -16,6 +16,23 @@
 <script>
   gtag('event', 'conversion', {'send_to': 'AW-18481316030/KFVsCISg2YkdEL6ByuxE'});
 </script>
+    <!-- Event snippet for Website lead conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18481316030/KFVsCISg2YkdEL6ByuxE',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 
     <script>window.$zoho=window.$zoho || {}; $zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
     <script id="zsiqscript" src="https://salesiq.zohopublic.in/widget?wc=siq40a29c253fc64841d5c9e202635df27f5e70b56baef6b909b049f5b3987a5836" defer></script>
