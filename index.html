@@ -20,6 +20,25 @@
       // 'new_customer': true /* calculate dynamically, populate with true/false */,
   });
 </script>
+        <!-- Event snippet for Website sale conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18483470958/vLdoCOn__YodEO7Eze1E',
+      'transaction_id': '',
+      'event_callback': callback
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
+  return false;
+}
+</script>
+
 
         <meta charset="UTF-8">
 <!-- This site is hosted on Netlify. Anyone can build and deploy a site
